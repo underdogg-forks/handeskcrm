@@ -1,8 +1,7 @@
 <?php
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateKpisTable extends Migration
 {
@@ -11,9 +10,10 @@ class CreateKpisTable extends Migration
      *
      * @return void
      */
-    public function up() {
+    public function up()
+    {
         Schema::create('kpis', function (Blueprint $table) {
-            $table->primary(["date","type","relation_id","kpi"]);
+            $table->primary(["date", "type", "relation_id", "kpi"]);
             $table->date('date');
             $table->tinyInteger('type');
             $table->tinyInteger('kpi');

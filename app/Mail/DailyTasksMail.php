@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -13,7 +12,8 @@ class DailyTasksMail extends Mailable
 
     public $tasks;
 
-    public function __construct($tasks) {
+    public function __construct($tasks)
+    {
         $this->tasks = $tasks;
     }
 
@@ -22,9 +22,10 @@ class DailyTasksMail extends Mailable
      *
      * @return $this
      */
-    public function build() {
+    public function build()
+    {
         return $this->subject('Handesk: Daily tasks')
-                    ->view('emails.tasks')
-                    ->with(["tasks" => $this->tasks]);
+            ->view('emails.tasks')
+            ->with(["tasks" => $this->tasks]);
     }
 }

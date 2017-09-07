@@ -1,8 +1,7 @@
 <?php
-
 namespace App;
-
-class Language {
+class Language
+{
 
     const EN = "en";
     const ES = "es";
@@ -10,7 +9,8 @@ class Language {
     const FR = "fr";
     const DE = "de";
 
-    public static function available() {
+    public static function available()
+    {
         return [
             static::EN => __("languages.en"),
             static::ES => __("languages.es"),

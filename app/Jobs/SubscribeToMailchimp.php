@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Jobs;
 
 use App\Services\Mailchimp;
@@ -17,6 +16,7 @@ class SubscribeToMailchimp implements ShouldQueue
     protected $email;
     protected $firstName;
     protected $fullName;
+
     /**
      * Create a new job instance.
      *
@@ -25,7 +25,8 @@ class SubscribeToMailchimp implements ShouldQueue
      * @param $firstName
      * @param $fullName
      */
-    public function __construct($listId, $email, $firstName, $fullName) {
+    public function __construct($listId, $email, $firstName, $fullName)
+    {
         $this->listId = $listId;
         $this->email = $email;
         $this->firstName = $firstName;
@@ -38,7 +39,8 @@ class SubscribeToMailchimp implements ShouldQueue
      * @param Mailchimp $mailchimp
      * @return void
      */
-    public function handle(Mailchimp $mailchimp) {
+    public function handle(Mailchimp $mailchimp)
+    {
         $mailchimp->subscribe($this->listId, $this->email, $this->firstName, $this->fullName);
     }
 }

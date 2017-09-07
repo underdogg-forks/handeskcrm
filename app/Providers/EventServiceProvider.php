@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Event;
@@ -13,7 +12,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\TicketCreated' =>[
+        'App\Events\TicketCreated' => [
             'App\Listeners\UpdateTicketCreationKpis'
         ],
         'App\Events\TicketCommented' => [

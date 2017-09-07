@@ -1,8 +1,5 @@
 <?php
-
 use App\Settings;
-use App\Team;
-use App\Ticket;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -17,11 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         factory(User::class)->create([
-            "email"     => "admin@handesk.com",
-            "password"  => bcrypt("admin"),
-            "admin"     => true,
+            "email" => "admin@handesk.com",
+            "password" => bcrypt("admin"),
+            "admin" => true,
         ]);
-
         Settings::create();
 
         /*$teams = factory(Team::class,4)->create();

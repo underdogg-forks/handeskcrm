@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
@@ -15,9 +13,7 @@ return [
     |            "sparkpost", "log", "array"
     |
     */
-
     'driver' => env('MAIL_DRIVER', 'smtp'),
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Address
@@ -28,9 +24,7 @@ return [
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
-
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -41,9 +35,7 @@ return [
     | stay compatible with the Mailgun e-mail application by default.
     |
     */
-
     'port' => env('MAIL_PORT', 587),
-
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address
@@ -54,12 +46,10 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@handesk.dev'),
         'name' => env('MAIL_FROM_NAME', 'Handesk'),
     ],
-
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
@@ -70,9 +60,7 @@ return [
     | transport layer security protocol should provide great security.
     |
     */
-
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -83,11 +71,8 @@ return [
     | connection. You may also set the "password" value below this one.
     |
     */
-
     'username' => env('MAIL_USERNAME'),
-
     'password' => env('MAIL_PASSWORD'),
-
     /*
     |--------------------------------------------------------------------------
     | Sendmail System Path
@@ -98,9 +83,7 @@ return [
     | been provided here, which will work well on most of your systems.
     |
     */
-
     'sendmail' => '/usr/sbin/sendmail -bs',
-
     'stream' => [
         'ssl' => [
             'allow_self_signed' => env('MAIL_SSLOPTIONS_ALLOW_SELF_SIGNED', false),
@@ -108,7 +91,6 @@ return [
             'verify_peer_name' => env('MAIL_SSLOPTIONS_VERIFY_PEER_NAME', true),
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
@@ -119,22 +101,18 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-
     'markdown' => [
         'theme' => 'default',
-
         'paths' => [
             resource_path('views/vendor/mail'),
         ],
     ],
-
     "fetch" => [
         "host" => env('MAIL_FETCH_HOST'),
-        "port" => env('MAIL_FETCH_PORT',110),
-        "username" => env('MAIL_FETCH_USERNAME','hi'),
+        "port" => env('MAIL_FETCH_PORT', 110),
+        "username" => env('MAIL_FETCH_USERNAME', 'hi'),
         "password" => env('MAIL_FETCH_PASSWORD'),
         "replyAboveLine" => "##- Please type your reply above this line -##",
-        "options" => env('MAIL_FETCH_OPTIONS','/pop3'),
+        "options" => env('MAIL_FETCH_OPTIONS', '/pop3'),
     ]
-
 ];

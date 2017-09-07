@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use App\Language;
@@ -10,12 +9,13 @@ class UserLocale
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next) {
-        app()->setLocale( auth()->user()->locale );
+    public function handle($request, Closure $next)
+    {
+        app()->setLocale(auth()->user()->locale);
         return $next($request);
     }
 }

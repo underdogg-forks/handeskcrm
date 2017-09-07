@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Listeners;
 
 use App\Events\TicketCreated;
@@ -21,7 +20,7 @@ class UpdateTicketCreationKpis
     /**
      * Handle the event.
      *
-     * @param  TicketCreated  $event
+     * @param  TicketCreated $event
      * @return void
      */
     public function handle(TicketCreated $event)

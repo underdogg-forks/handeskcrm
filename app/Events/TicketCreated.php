@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
@@ -16,7 +15,8 @@ class TicketCreated
 
     public $ticket;
 
-    public function __construct($ticket) {
+    public function __construct($ticket)
+    {
         $this->ticket = $ticket;
     }
 

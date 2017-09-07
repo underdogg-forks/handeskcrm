@@ -1,5 +1,4 @@
 <?php
-
 return [
-    "setting"        => "Setting|Settings",
+    "setting" => "Setting|Settings",
 ];

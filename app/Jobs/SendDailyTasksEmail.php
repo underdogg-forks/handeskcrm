@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Jobs;
 
 use App\Mail\DailyTasksMail;
@@ -15,17 +14,19 @@ class SendDailyTasksEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-
-    public function handle() {
-        $users = UserSettings::where('daily_tasks_notification',true)->get()->pluck('user');
-        $users->each(function($user){
+    public function handle()
+    {
+        $users = UserSettings::where('daily_tasks_notification', true)->get()->pluck('user');
+        $users->each(function ($user) {
             $this->sendDailyTasksEmailTo($user);
         });
     }
 
-    private function sendDailyTasksEmailTo($user){
+    private function sendDailyTasksEmailTo($user)
+    {
         $tasks = $user->todayTasks;
-        if($tasks->count() == 0) return;
-        Mail::to($user)->send( new DailyTasksMail( $tasks ) );
+        if ($tasks->count() == 0)
+            return;
+        Mail::to($user)->send(new DailyTasksMail($tasks));
     }
 }

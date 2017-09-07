@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
@@ -18,7 +17,8 @@ class TicketCommented
     public $comment;
     public $previousStatus;
 
-    public function __construct($ticket, $comment, $previousStatus) {
+    public function __construct($ticket, $comment, $previousStatus)
+    {
         $this->ticket = $ticket;
         $this->comment = $comment;
         $this->previousStatus = $previousStatus;

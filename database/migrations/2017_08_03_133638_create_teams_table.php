@@ -1,8 +1,7 @@
 <?php
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTeamsTable extends Migration
 {
@@ -18,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('slack_webhook_url')->nullable();
-            $table->string('token',24);
+            $table->string('token', 24);
             $table->timestamps();
         });
     }

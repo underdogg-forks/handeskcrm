@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
@@ -14,8 +13,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Ticket' => 'App\Policies\TicketPolicy',
-        'App\Team'   => 'App\Policies\TeamPolicy',
-        'App\Lead'   => 'App\Policies\LeadPolicy',
+        'App\Team' => 'App\Policies\TeamPolicy',
+        'App\Lead' => 'App\Policies\LeadPolicy',
     ];
 
     /**
@@ -26,7 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         Gate::define('see-admin', function ($user) {
             return $user->admin;
         });

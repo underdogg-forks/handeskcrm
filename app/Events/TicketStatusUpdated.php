@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
@@ -12,13 +11,14 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class TicketStatusUpdated
 {
-    use Dispatchable,  SerializesModels;
+    use Dispatchable, SerializesModels;
 
     public $ticket;
     public $previousStatus;
     public $user;
 
-    public function __construct($ticket, $user, $previousStatus) {
+    public function __construct($ticket, $user, $previousStatus)
+    {
         $this->ticket = $ticket;
         $this->previousStatus = $previousStatus;
         $this->user = $user;
